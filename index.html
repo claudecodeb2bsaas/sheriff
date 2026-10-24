@@ -191,7 +191,7 @@ section{position:relative;padding:110px 0}
 .contact-card .h2{margin-inline:auto;max-width:900px}
 .contact-card .sub{margin:0 auto}
 .contact-card .cta{justify-content:center;margin-top:38px}
-.handle{margin-top:26px;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-width:248px;padding:10px 18px;white-space:nowrap;border-radius:99px;font-weight:700;color:var(--ink2);cursor:pointer;border:1px dashed rgba(255,255,255,.25);background:transparent;font-family:inherit;font-size:16px;transition:.25s}
+.handle{margin-top:26px;display:inline-flex;align-items:center;justify-content:center;gap:10px;width:270px;height:50px;box-sizing:border-box;padding:0 18px;white-space:nowrap;border-radius:99px;font-weight:700;color:var(--ink2);cursor:pointer;border:1px dashed rgba(255,255,255,.25);background:transparent;font-family:inherit;font-size:16px;transition:.25s}
 .handle:hover{color:#fff;border-color:var(--o1)}
 footer{padding:30px 0 60px;color:var(--ink3);font-size:15px}
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
@@ -285,7 +285,7 @@ html{scroll-padding-top:150px}
 .q-xp{white-space:nowrap;color:var(--o1);font-style:italic;font-weight:900}
 .q-bar{flex:1;height:12px;border-radius:99px;background:rgba(0,0,0,.4);box-shadow:inset 0 1px 3px rgba(0,0,0,.6);overflow:hidden}
 .q-bar{position:relative}
-.q-fill{display:block;height:100%;width:0;border-radius:99px 0 0 99px;background:linear-gradient(90deg,#ff9142,#ffc27a);box-shadow:0 0 14px rgba(255,150,70,.8);transition:width .8s ease-out;position:relative;overflow:hidden}
+.q-fill{display:block;height:100%;width:0;border-radius:99px 0 0 99px;background:linear-gradient(90deg,#ff9142,#ffc27a);box-shadow:0 0 14px rgba(255,150,70,.8);transition:width .5s ease-out;position:relative;overflow:hidden}
 .q-fill::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);animation:shine 2.4s linear infinite}
 @keyframes shine{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
 .quest.full .q-fill{border-radius:99px;background:linear-gradient(90deg,#1fa86b,#5ee2a0);box-shadow:0 0 14px rgba(72,220,150,.75)}
@@ -293,6 +293,7 @@ html{scroll-padding-top:150px}
 .q-chunk{position:absolute;top:0;bottom:0;width:0;border-radius:0;background:linear-gradient(90deg,#c9621f,#e07a3a);box-shadow:none;pointer-events:none;transition:width 1.1s cubic-bezier(.3,.7,.3,1),opacity .5s ease}
 .links a{position:relative}
 .bang{position:absolute;top:2px;right:2px;min-width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:900;color:#fff;background:#e5391a;box-shadow:0 0 0 2px rgba(35,16,10,.9),0 0 12px rgba(255,80,40,.8);animation:ping 1.6s ease-in-out infinite}
+.bang.inl{position:static;display:inline-grid;vertical-align:middle;margin:0 4px;min-width:20px;height:20px;font-size:13px;animation:none}
 @keyframes ping{50%{transform:scale(1.18)}}
 .links a.ok .bang{background:#1fa86b;box-shadow:0 0 0 2px rgba(35,16,10,.9);animation:none}
 .toast{position:fixed;z-index:60;left:50%;bottom:28px;transform:translate(-50%,30px);opacity:0;pointer-events:none;padding:14px 24px;border-radius:99px;font-weight:800;font-size:17px;color:#fff;
@@ -340,6 +341,25 @@ html.done .btn.tg::after{content:"";position:absolute;top:-10%;bottom:-10%;left:
 
 html.done .btn.tg.won{animation:tgWin 1.6s ease-out 2 both}
 @keyframes tgWin{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(42,171,238,.9)}40%{transform:scale(1.14);box-shadow:0 0 0 18px rgba(42,171,238,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(42,171,238,0)}}
+
+/* кнопки Figma — тот же шрифт и вид, что у кнопок Telegram */
+.btn.fig{font-style:normal;font-weight:800;font-size:20px;letter-spacing:.01em}
+.cta .btn.fig{font-size:17px}
+
+@media (max-width:760px){
+  .nav{flex-wrap:wrap;row-gap:8px;padding:10px 14px;border-radius:26px;top:10px}
+  .nav .logo{font-size:18px}
+  .links{order:3;width:100%;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+  .links::-webkit-scrollbar{display:none}
+  .links a{padding:8px 12px;font-size:14px;white-space:nowrap}
+  .nav .btn.tg{padding:8px 14px}
+  .quest{top:132px}
+}
+
+/* подсказка: кнопка ? подсвечивает «Мой путь», клик по нему убирает подсказку */
+.hint-q{flex:none;width:36px;height:36px;border-radius:50%;border:0;cursor:pointer;font-family:inherit;font-weight:900;font-size:19px;color:#fff;background:linear-gradient(160deg,#ffa25a,#d4510f);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 8px 18px -6px rgba(247,122,36,.7)}
+.links a.pulse-hint{background:rgba(255,145,66,.28);color:#fff;box-shadow:0 0 0 2px #ff9142,0 0 22px rgba(255,145,66,.75);animation:hintPulse 1.4s ease-in-out infinite}
+@keyframes hintPulse{50%{box-shadow:0 0 0 4px #ffb27a,0 0 30px rgba(255,160,90,.9)}}
 </style>
 </head>
 <body>
@@ -384,12 +404,12 @@ html.done .btn.tg.won{animation:tgWin 1.6s ease-out 2 both}
       <div class="hero-card glass reveal" style="--d:.2s">
         <div class="role">SMM-специалист<br>и <b>дизайнер</b> из игрового комьюнити</div>
         <p>Пять лет на проекте, за год прошёл путь от хелпера до заместителя главного администратора. Знаю аудиторию изнутри: что заходит, что ждут и о чём спорят. Пишу тексты, составляю ТЗ и сам рисую баннеры и иконки в Figma.</p>
-        <div class="honest" style="margin-top:20px;max-width:640px">
-          <svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
-          <div>Сайт читается как короткий гайд: 5 глав, прогресс сверху. Листай по порядку, там, где «!», ещё не прочитано.</div>
+        <div class="honest hint" id="hint" style="margin-top:20px;max-width:640px">
+          <button class="hint-q" id="hintQ" type="button" aria-label="Показать, где начать">?</button>
+          <div>Сайт читается по порядку: пять глав, прогресс наверху. Где стоит <b class="bang inl">!</b> — там ещё не читано.</div>
         </div>
         <div class="cta">
-          <a class="btn" href="https://www.figma.com/design/XtVjtAc9kav9iW3pgwy1S5/Majestic-Event?node-id=0-1" target="_blank" rel="noopener">Портфолио в Figma <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a class="btn fig" href="https://www.figma.com/design/XtVjtAc9kav9iW3pgwy1S5/Majestic-Event?node-id=0-1" target="_blank" rel="noopener">Портфолио в Figma <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
           <a class="btn tg" href="https://t.me/gdftshdgfhjn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.7 4.3 2.9 11.2c-1.2.5-1.2 1.2.2 1.6l4.5 1.4 1.7 5.2c.2.6.1.8.8.8.5 0 .7-.2 1-.5l2.2-2.1 4.6 3.4c.8.5 1.5.2 1.7-.8L22 5.8c.3-1.2-.5-1.8-1.3-1.5zM8.3 13.2l9.5-6c.4-.3.8-.1.5.2l-7.700 7-.3 3.200z"/></svg>Написать в Telegram</a>
         </div>
       </div>
@@ -539,14 +559,14 @@ html.done .btn.tg.won{animation:tgWin 1.6s ease-out 2 both}
       <p class="sub">Готов выполнить тестовое задание, показать больше работ и быстро вникнуть в ваш проект. На связи с 5:30 до 23:00.</p>
       <div class="cta">
         <a class="btn tg" href="https://t.me/gdftshdgfhjn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.7 4.3 2.9 11.2c-1.2.5-1.2 1.2.2 1.6l4.5 1.4 1.7 5.2c.2.6.1.8.8.8.5 0 .7-.2 1-.5l2.2-2.1 4.6 3.4c.8.5 1.5.2 1.7-.8L22 5.8c.3-1.2-.5-1.8-1.3-1.5zM8.3 13.2l9.5-6c.4-.3.8-.1.5.2l-7.700 7-.3 3.200z"/></svg>Написать в Telegram</a>
-        <a class="btn" href="https://www.figma.com/design/XtVjtAc9kav9iW3pgwy1S5/Majestic-Event?node-id=0-1" target="_blank" rel="noopener">Портфолио в Figma <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="btn fig" href="https://www.figma.com/design/XtVjtAc9kav9iW3pgwy1S5/Majestic-Event?node-id=0-1" target="_blank" rel="noopener">Портфолио в Figma <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
         <a class="btn ghost" href="https://github.com/claudecodeb2bsaas" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.500 11.500 0 0 0-3.600 22.400c.6.100.8-.3.8-.6v-2c-3.200.7-3.900-1.500-3.900-1.500-.5-1.300-1.300-1.700-1.300-1.700-1-.7.100-.7.100-.7 1.200.1 1.800 1.200 1.800 1.200 1 1.800 2.700 1.300 3.400 1 .1-.8.400-1.300.7-1.600-2.600-.3-5.300-1.300-5.300-5.700 0-1.300.5-2.300 1.200-3.100-.1-.3-.5-1.500.1-3.100 0 0 1-.3 3.200 1.200a11 11 0 0 1 5.800 0c2.200-1.500 3.200-1.200 3.200-1.200.6 1.600.2 2.800.1 3.100.8.800 1.200 1.800 1.200 3.100 0 4.400-2.700 5.400-5.300 5.700.4.400.8 1.100.8 2.200v3.200c0 .3.200.7.800.6A11.500 11.500 0 0 0 12 .5z"/></svg>
           GitHub</a>
       </div>
       <button class="handle" id="copy" type="button" aria-label="Скопировать ник Telegram">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="3"/><path d="M5 15V6a3 3 0 0 1 3-3h9"/></svg>
-        <span id="copytxt">@gdftshdgfhjn</span></button>
+        <span id="copytxt" style="display:inline-block;min-width:200px;text-align:center;font-size:16px;line-height:20px">@gdftshdgfhjn</span></button>
     </div>
     <div class="end" data-ch="contact"></div>
   </div>
@@ -700,18 +720,31 @@ html.done .btn.tg.won{animation:tgWin 1.6s ease-out 2 both}
       b.classList.add('won'); setTimeout(function(){ b.classList.remove('won'); },3000);
     });
   }
+  var pendT=0, readFrac={};
+  // полоска считает прочитанное по прокрутке: сколько каждой главы уже прошли
+  function calcFill(){
+    var sum=0; CH.forEach(function(ch){ sum+=readFrac[ch]||0; });
+    var pct=sum/CH.length*100;
+    qFill.style.width=pct+'%';
+    quest.classList.toggle('full', pct>=99.5);
+  }
   function mark(id){
     if(seen[id]) return; seen[id]=1; nRead++;
     var a=document.querySelector('.links a[data-ch="'+id+'"]');
     if(a){ a.classList.add('ok'); a.querySelector('.bang').textContent='\u2713'; }
-    var prev=(nRead-1)/CH.length*100, cur=nRead/CH.length*100;
-    // видимый «кусок» воды добавляется, потом сливается с полоской
-    var chunk=document.createElement('span'); chunk.className='q-chunk';
-    chunk.style.left='calc('+prev+'% - 2px)'; quest.querySelector('.q-bar').appendChild(chunk);
-    requestAnimationFrame(function(){ requestAnimationFrame(function(){ chunk.style.width='calc('+(cur-prev)+'% + 2px)'; }); });
-    setTimeout(function(){ qFill.style.width=cur+'%'; chunk.style.opacity='0'; setTimeout(function(){ chunk.remove(); },600); if(all) quest.classList.add('full'); },1150);
-    qXp.textContent=(nRead*20)+' XP';
+    // пролив на достижении: участок этой главы «наливается» поверх полоски и гаснет
+    (function(){
+      var idx=CH.indexOf(id), before=0, upto=0;
+      CH.forEach(function(ch,i){ if(i<idx) before+=readFrac[ch]||0; if(i<=idx) upto+=readFrac[ch]||0; });
+      var from=before/CH.length*100, to=upto/CH.length*100;
+      var pr=document.createElement('span'); pr.className='q-chunk';
+      pr.style.left=from+'%'; pr.style.width='0%';
+      quest.querySelector('.q-bar').appendChild(pr);
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){ pr.style.width=(to-from)+'%'; }); });
+      setTimeout(function(){ pr.style.opacity='0'; setTimeout(function(){ pr.remove(); },600); },1100);
+    })();
     var all=nRead===CH.length;
+    qXp.textContent=(nRead*20)+' XP';
     qLabel.textContent=all?'Все главы пройдены':'Прочитано '+nRead+' из '+CH.length;
     toast.textContent=all?'+20 XP · Всё прочитано, спасибо!':'+20 XP · Глава '+nRead+' из '+CH.length+' пройдена';
     toast.classList.add('show'); clearTimeout(tt); tt=setTimeout(function(){toast.classList.remove('show')},2600);
@@ -723,11 +756,40 @@ html.done .btn.tg.won{animation:tgWin 1.6s ease-out 2 both}
       confetti(.5,55,2600,.8);
     }
   }
+  // отслеживание прокрутки: какая доля каждой главы уже пройдена
+  function track(){
+    var line=innerHeight*.85, atEnd=innerHeight+scrollY>=document.documentElement.scrollHeight-4;
+    CH.forEach(function(ch){
+      var el=document.getElementById(ch); if(!el) return;
+      var r=el.getBoundingClientRect(), h=r.height||1;
+      var f=atEnd?1:Math.max(0,Math.min(1,(line-r.top)/h));
+      if(f>(readFrac[ch]||0)) readFrac[ch]=f;
+      if(readFrac[ch]>=.95) mark(ch);
+    });
+    calcFill();
+  }
+  var ticking=false;
+  addEventListener('scroll',function(){
+    if(!ticking){ ticking=true; requestAnimationFrame(function(){ ticking=false; track(); }); }
+  },{passive:true});
+  addEventListener('resize',track);
   var eo=new IntersectionObserver(function(es){
     es.forEach(function(e){ if(e.isIntersecting){ mark(e.target.dataset.ch); eo.unobserve(e.target);} });
   },{rootMargin:'0px 0px -12% 0px'});
   document.querySelectorAll('.end').forEach(function(el){ eo.observe(el); });
 
+  // подсказка: ? подсвечивает «Мой путь», клик по нему убирает подсказку
+  (function(){
+    var hq=document.getElementById('hintQ'), hint=document.getElementById('hint'), first=document.querySelector('.links a[data-ch="about"]');
+    if(!hq||!hint||!first) return;
+    hq.addEventListener('click',function(){ first.classList.add('pulse-hint'); });
+    first.addEventListener('click',function(){
+      first.classList.remove('pulse-hint');
+      hint.style.transition='opacity .5s, transform .5s'; hint.style.opacity='0'; hint.style.transform='translateY(10px)';
+      setTimeout(function(){ hint.remove(); },500);
+    });
+  })();
+  track();
   // копирование ника
   var btn = document.getElementById('copy'), txt = document.getElementById('copytxt');
   btn.addEventListener('click', function(){

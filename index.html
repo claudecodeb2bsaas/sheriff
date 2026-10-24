@@ -389,6 +389,11 @@ html{overflow-x:hidden}
 /* на достижении полоска коротко светлеет */
 .quest.pulse .q-fill{animation:fillFlash 1.2s ease-out 1}
 @keyframes fillFlash{0%{filter:brightness(1.6)}100%{filter:brightness(1)}}
+
+/* телефон: заголовок целиком умещается в свою строку, буквы не обрезаются */
+@media (max-width:760px){
+  .mega{font-size:18.5vw;margin-left:0;padding-right:.06em}
+}
 </style>
 </head>
 <body>

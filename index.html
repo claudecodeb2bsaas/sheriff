@@ -105,9 +105,9 @@ section{position:relative;padding:110px 0}
 
 /* ---------- hero ---------- */
 .hero{min-height:100vh;display:flex;align-items:center;padding:150px 0 90px}
-.mega{font-style:italic;font-weight:900;font-size:clamp(92px,21vw,300px);line-height:.82;letter-spacing:-.045em;margin:26px 0 0 -.04em;
+.mega{font-style:italic;font-weight:900;font-size:clamp(78px,21vw,300px);line-height:.82;letter-spacing:-.045em;margin:26px 0 0 -.04em;padding:.12em .1em .2em .06em;
   background:linear-gradient(180deg,#fff 10%,#f4e6d8 55%,#c9ab90);-webkit-background-clip:text;background-clip:text;color:transparent;
-  filter:drop-shadow(0 30px 50px rgba(0,0,0,.45));position:relative;z-index:1;padding-bottom:.14em}
+  filter:drop-shadow(0 30px 50px rgba(0,0,0,.45));position:relative;z-index:1}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;margin-top:-34px;position:relative;z-index:2}
 .hero-card{padding:38px 40px}
 .hero-card .role{font-style:italic;font-weight:800;font-size:clamp(26px,3vw,38px);line-height:1.1;margin-bottom:14px}
@@ -357,6 +357,7 @@ html.done .btn.tg.won{animation:tgWin 1.6s ease-out 2 both}
 }
 
 /* подсказка: кнопка ? подсвечивает «Мой путь», клик по нему убирает подсказку */
+@media (max-width:760px){.hint{display:none!important}}
 .hint-q{flex:none;width:36px;height:36px;border-radius:50%;border:0;cursor:pointer;font-family:inherit;font-weight:900;font-size:19px;color:#fff;background:linear-gradient(160deg,#ffa25a,#d4510f);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 8px 18px -6px rgba(247,122,36,.7)}
 .links a.pulse-hint{background:rgba(255,145,66,.28);color:#fff;box-shadow:0 0 0 2px #ff9142,0 0 22px rgba(255,145,66,.75);animation:hintPulse 1.4s ease-in-out infinite}
 @keyframes hintPulse{50%{box-shadow:0 0 0 4px #ffb27a,0 0 30px rgba(255,160,90,.9)}}
@@ -380,10 +381,10 @@ html.done .btn.tg.won{animation:tgWin 1.6s ease-out 2 both}
 @media (max-width:760px){
   .nav{overflow:visible}
   .links.open{z-index:60}
+  .nav .logo{flex:none;white-space:nowrap}
   .quest{top:80px}
 }
 html{overflow-x:hidden}
-section,footer,main{overflow-x:clip}
 
 /* на достижении полоска коротко светлеет */
 .quest.pulse .q-fill{animation:fillFlash 1.2s ease-out 1}
@@ -677,7 +678,8 @@ section,footer,main{overflow-x:clip}
   var cfRaf=0;
   function confetti(k,n,DUR,power){
     if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var c=document.getElementById('confetti'), x=c.getContext('2d'), W, H, dpr=Math.min(devicePixelRatio||1,2);
+    var mob=innerWidth<760; if(mob){ n=Math.round(n*.45); }
+    var c=document.getElementById('confetti'), x=c.getContext('2d'), W, H, dpr=mob?1:Math.min(devicePixelRatio||1,2);
     function size(){ W=innerWidth; H=innerHeight; c.width=W*dpr; c.height=H*dpr; x.setTransform(dpr,0,0,dpr,0,0); }
     size();
     cancelAnimationFrame(cfRaf);
@@ -759,7 +761,7 @@ section,footer,main{overflow-x:clip}
     fillRaf = dispPct!==targetPct ? requestAnimationFrame(animFill) : 0;
   }
   function calcFill(){
-    var sum=0; CH.forEach(function(ch){ sum+=readFrac[ch]||0; });
+    var sum=0; CH.forEach(function(ch){ sum+=seen[ch]?1:(readFrac[ch]||0); });
     targetPct=sum/CH.length*100;
     quest.classList.toggle('full', targetPct>=99.5);
     if(!fillRaf) fillRaf=requestAnimationFrame(animFill);
@@ -812,6 +814,7 @@ section,footer,main{overflow-x:clip}
     if(!hq||!hint||!first) return;
     hq.addEventListener('click',function(){ first.classList.add('pulse-hint'); });
     first.addEventListener('click',function(){
+      if(!first.classList.contains('pulse-hint')) return;
       first.classList.remove('pulse-hint');
       hint.style.transition='opacity .5s, transform .5s'; hint.style.opacity='0'; hint.style.transform='translateY(10px)';
       setTimeout(function(){ hint.remove(); },500);

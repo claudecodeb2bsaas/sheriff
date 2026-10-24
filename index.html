@@ -77,7 +77,7 @@ section{position:relative;padding:110px 0}
 .kicker{display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border-radius:99px;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--o1)}
 .kicker::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--o2);box-shadow:0 0 14px var(--o2)}
 .h2{font-style:italic;font-weight:900;font-size:clamp(40px,6.4vw,88px);line-height:.95;letter-spacing:-.025em;margin:22px 0 18px;
-  background:linear-gradient(180deg,#fff,#f1dfcf 70%,#d9bfa6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  background:linear-gradient(180deg,#fff,#f1dfcf 70%,#d9bfa6);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.14em}
 .sub{max-width:620px;color:var(--ink2);font-size:19px}
 .btn{display:inline-flex;align-items:center;gap:12px;padding:20px 32px;border-radius:22px;font-style:italic;font-weight:800;font-size:22px;cursor:pointer;border:0;color:#fff;
   background:linear-gradient(180deg,#ff9142,#f26a1b 55%,#e2570f);
@@ -88,6 +88,8 @@ section{position:relative;padding:110px 0}
 .btn.ghost{font-style:normal;font-weight:700;font-size:18px;background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.05));
   -webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 14px 34px -16px rgba(0,0,0,.7)}
 .btn svg{width:22px;height:22px;flex:none}
+.cta .btn{font-size:17px;padding:14px 22px;border-radius:18px;gap:9px}
+.cta .btn svg{width:18px;height:18px}
 .reveal{opacity:0;transform:translateY(34px) scale(.985);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
 .reveal.in{opacity:1;transform:none}
 
@@ -105,7 +107,7 @@ section{position:relative;padding:110px 0}
 .hero{min-height:100vh;display:flex;align-items:center;padding:150px 0 90px}
 .mega{font-style:italic;font-weight:900;font-size:clamp(92px,21vw,300px);line-height:.82;letter-spacing:-.045em;margin:26px 0 0 -.04em;
   background:linear-gradient(180deg,#fff 10%,#f4e6d8 55%,#c9ab90);-webkit-background-clip:text;background-clip:text;color:transparent;
-  filter:drop-shadow(0 30px 50px rgba(0,0,0,.45));position:relative;z-index:1}
+  filter:drop-shadow(0 30px 50px rgba(0,0,0,.45));position:relative;z-index:1;padding-bottom:.14em}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;margin-top:-34px;position:relative;z-index:2}
 .hero-card{padding:38px 40px}
 .hero-card .role{font-style:italic;font-weight:800;font-size:clamp(26px,3vw,38px);line-height:1.1;margin-bottom:14px}
@@ -143,7 +145,7 @@ section{position:relative;padding:110px 0}
 .honest svg{flex:none;width:26px;height:26px;stroke:var(--o1);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
 .stats{display:grid;gap:20px}
 .stat{padding:28px 30px}
-.stat b{display:block;font-style:italic;font-weight:900;font-size:62px;line-height:1;letter-spacing:-.03em;background:linear-gradient(180deg,#ffbf8a,#f77a24);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat b{display:block;font-style:italic;font-weight:900;font-size:62px;line-height:1;letter-spacing:-.03em;background:linear-gradient(180deg,#ffbf8a,#f77a24);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.14em}
 .stat span{display:block;margin-top:8px;color:var(--ink2);font-size:17px}
 
 /* ---------- навыки ---------- */
@@ -189,7 +191,7 @@ section{position:relative;padding:110px 0}
 .contact-card .h2{margin-inline:auto;max-width:900px}
 .contact-card .sub{margin:0 auto}
 .contact-card .cta{justify-content:center;margin-top:38px}
-.handle{margin-top:26px;display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:99px;font-weight:700;color:var(--ink2);cursor:pointer;border:1px dashed rgba(255,255,255,.25);background:transparent;font-family:inherit;font-size:16px;transition:.25s}
+.handle{margin-top:26px;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-width:248px;padding:10px 18px;white-space:nowrap;border-radius:99px;font-weight:700;color:var(--ink2);cursor:pointer;border:1px dashed rgba(255,255,255,.25);background:transparent;font-family:inherit;font-size:16px;transition:.25s}
 .handle:hover{color:#fff;border-color:var(--o1)}
 footer{padding:30px 0 60px;color:var(--ink3);font-size:15px}
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
@@ -239,7 +241,7 @@ footer a:hover{color:var(--o1)}
 .sc-body{position:relative;z-index:1;max-width:620px}
 .sc-tag{display:inline-block;padding:8px 16px;border-radius:99px;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.25);margin-bottom:22px}
 .sc-body h3{font-style:italic;font-weight:900;font-size:clamp(46px,6.4vw,92px);line-height:.95;letter-spacing:-.025em;margin-bottom:20px;
-  background:linear-gradient(180deg,#fff,#f1dfcf 70%,#d9bfa6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  background:linear-gradient(180deg,#fff,#f1dfcf 70%,#d9bfa6);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.14em}
 .sc-body p{color:rgba(255,244,234,.82);font-size:19px;margin-bottom:30px;max-width:520px}
 .sc-fig{position:relative;z-index:1;flex:none;width:200px;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45));animation:bob 8s ease-in-out infinite}
 .sc-fig svg{width:100%;height:auto;display:block}
@@ -282,10 +284,13 @@ html{scroll-padding-top:150px}
 .q-l{white-space:nowrap;color:var(--ink2)}
 .q-xp{white-space:nowrap;color:var(--o1);font-style:italic;font-weight:900}
 .q-bar{flex:1;height:12px;border-radius:99px;background:rgba(0,0,0,.4);box-shadow:inset 0 1px 3px rgba(0,0,0,.6);overflow:hidden}
-.q-fill{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#ff9142,#ffc27a);box-shadow:0 0 14px rgba(255,150,70,.8);transition:width .9s cubic-bezier(.2,.8,.2,1);position:relative;overflow:hidden}
+.q-bar{position:relative}
+.q-fill{display:block;height:100%;width:0;border-radius:99px 0 0 99px;background:linear-gradient(90deg,#ff9142,#ffc27a);box-shadow:0 0 14px rgba(255,150,70,.8);transition:width .8s ease-out;position:relative;overflow:hidden}
 .q-fill::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);animation:shine 2.4s linear infinite}
 @keyframes shine{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
-.quest.full .q-l{color:var(--o1)}
+.quest.full .q-fill{border-radius:99px;background:linear-gradient(90deg,#1fa86b,#5ee2a0);box-shadow:0 0 14px rgba(72,220,150,.75)}
+.quest.full .q-l{color:#5ee2a0}
+.q-chunk{position:absolute;top:0;bottom:0;width:0;border-radius:0;background:linear-gradient(90deg,#c9621f,#e07a3a);box-shadow:none;pointer-events:none;transition:width 1.1s cubic-bezier(.3,.7,.3,1),opacity .5s ease}
 .links a{position:relative}
 .bang{position:absolute;top:2px;right:2px;min-width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:900;color:#fff;background:#e5391a;box-shadow:0 0 0 2px rgba(35,16,10,.9),0 0 12px rgba(255,80,40,.8);animation:ping 1.6s ease-in-out infinite}
 @keyframes ping{50%{transform:scale(1.18)}}
@@ -314,6 +319,27 @@ html{scroll-padding-top:150px}
 .case-links a{display:inline-flex;align-items:center;gap:8px;font-weight:800;color:var(--o1);transition:gap .3s}
 .case-links a:hover{gap:14px}
 .case-links small{flex-basis:100%;color:var(--ink3);font-size:13px}
+
+/* ---------- конфети после прочтения ---------- */
+#confetti,#confetti2{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:70}
+#confetti2{z-index:-1}
+
+/* кнопка Telegram после прочтения: редкий блик и лёгкая пульсация */
+.btn.tg{position:relative;overflow:hidden}
+html.done .btn.tg{animation:tgBeat 7s ease-in-out infinite}
+html.done .btn.tg::after{content:"";position:absolute;top:-10%;bottom:-10%;left:-60%;width:45%;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-18deg);
+  animation:tgShine 7s ease-in-out infinite}
+@keyframes tgShine{0%{left:-60%}18%{left:130%}100%{left:130%}}
+@keyframes tgBeat{0%,20%,100%{transform:scale(1)}8%{transform:scale(1.05)}14%{transform:scale(1.02)}}
+@media (prefers-reduced-motion:reduce){html.done .btn.tg,html.done .btn.tg::after{animation:none}}
+
+/* финал: полоска светится, кнопка Telegram акцентно вспыхивает один раз */
+.quest.win{animation:questWin 2.4s ease-out 1}
+@keyframes questWin{0%{box-shadow:0 0 0 0 rgba(72,220,150,.9)}60%{box-shadow:0 0 0 22px rgba(72,220,150,0)}100%{box-shadow:none}}
+
+html.done .btn.tg.won{animation:tgWin 1.6s ease-out 2 both}
+@keyframes tgWin{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(42,171,238,.9)}40%{transform:scale(1.14);box-shadow:0 0 0 18px rgba(42,171,238,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(42,171,238,0)}}
 </style>
 </head>
 <body>
@@ -345,6 +371,8 @@ html{scroll-padding-top:150px}
   <span class="q-xp" id="qXp">0 XP</span>
 </div>
 <div class="toast" id="toast"></div>
+<canvas id="confetti"></canvas>
+<canvas id="confetti2"></canvas>
 
 <main>
 <!-- HERO -->
@@ -355,8 +383,11 @@ html{scroll-padding-top:150px}
     <div class="hero-grid">
       <div class="hero-card glass reveal" style="--d:.2s">
         <div class="role">SMM-специалист<br>и <b>дизайнер</b> из игрового комьюнити</div>
-        <p>Пять лет на проекте, быстрый путь от хелпера до заместителя главного администратора. Знаю аудиторию изнутри: что заходит, что ждут и о чём спорят. Пишу тексты, составляю ТЗ и сам рисую баннеры и иконки в Figma.</p>
-        <p class="how">Сайт читается как короткий гайд: 5 глав, прогресс сверху. Листай по порядку, там, где «!», ещё не прочитано.</p>
+        <p>Пять лет на проекте, за год прошёл путь от хелпера до заместителя главного администратора. Знаю аудиторию изнутри: что заходит, что ждут и о чём спорят. Пишу тексты, составляю ТЗ и сам рисую баннеры и иконки в Figma.</p>
+        <div class="honest" style="margin-top:20px;max-width:640px">
+          <svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
+          <div>Сайт читается как короткий гайд: 5 глав, прогресс сверху. Листай по порядку, там, где «!», ещё не прочитано.</div>
+        </div>
         <div class="cta">
           <a class="btn" href="https://www.figma.com/design/XtVjtAc9kav9iW3pgwy1S5/Majestic-Event?node-id=0-1" target="_blank" rel="noopener">Портфолио в Figma <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
           <a class="btn tg" href="https://t.me/gdftshdgfhjn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.7 4.3 2.9 11.2c-1.2.5-1.2 1.2.2 1.6l4.5 1.4 1.7 5.2c.2.6.1.8.8.8.5 0 .7-.2 1-.5l2.2-2.1 4.6 3.4c.8.5 1.5.2 1.7-.8L22 5.8c.3-1.2-.5-1.8-1.3-1.5zM8.3 13.2l9.5-6c.4-.3.8-.1.5.2l-7.700 7-.3 3.200z"/></svg>Написать в Telegram</a>
@@ -387,10 +418,10 @@ html{scroll-padding-top:150px}
     <div class="story glass reveal" style="--d:.1s">
       <div class="path" aria-label="Путь">
         <div class="node"><i>1</i><b>Хелпер</b></div>
-        <div class="way"><span>быстро</span></div>
+        <div class="way"><span>1 год</span></div>
         <div class="node top"><i>2</i><b>ЗГА</b></div>
       </div>
-      <p>Я на проекте <strong>с 2021 года</strong>. Быстро прошёл путь от <strong>хелпера</strong> до <strong>заместителя главного администратора</strong> на сервере <strong>Seattle</strong>. Мой админ-ник: <strong>sheriff</strong>. За это время изучил механики, внутренние правила и сообщество, знаю и целевую аудиторию, и ту, что просто играет.</p>
+      <p>Я на проекте <strong>с 2021 года</strong>. За год прошёл путь от <strong>хелпера</strong> до <strong>заместителя главного администратора</strong> на сервере <strong>Seattle</strong>. Мой админ-ник: <strong>sheriff</strong>. За это время изучил механики, внутренние правила и сообщество, знаю и целевую аудиторию, и ту, что просто играет.</p>
       <p>Руководил многими процессами, в том числе <strong>Discord ивентов</strong>. Это такой мини-SMM отдел: я руководил людьми и постами и писал <strong>ГМП</strong>. Их до сих пор можно найти в поиске по <strong>events</strong>.</p>
       <p>Слежу за контент-мейкерами, тематическими группами и трендами, и умею подстраивать их под проект. Составляю понятные ТЗ для дизайнеров, быстро воспринимаю информацию и адаптируюсь под процессы команды.</p>
       <p>Дизайн делаю сам: самостоятельно разрабатывал дизайны для <strong>Grand RP</strong> (на самозанятости) и для <strong>Majestic</strong> (на любительском уровне, как энтузиаст).</p>
@@ -401,7 +432,7 @@ html{scroll-padding-top:150px}
     </div>
     <div class="stats3">
       <div class="stat glass reveal" style="--d:.15s"><b data-count="5" data-suffix="+">0</b><span>лет в игровом комьюнити</span></div>
-      <div class="stat glass reveal" style="--d:.22s"><b>Хелпер → ЗГА</b><span>сервер Seattle, быстрый рост</span></div>
+      <div class="stat glass reveal" style="--d:.22s"><b>1 год</b><span>от хелпера до ЗГА, сервер Seattle</span></div>
       <div class="stat glass reveal" style="--d:.29s"><b data-count="2" data-suffix="">0</b><span>игровых проекта, для которых рисовал дизайн</span></div>
     </div>
     <div class="next"><a class="btn ghost" href="#skills">Дальше: Навыки ↓</a></div>
@@ -592,17 +623,105 @@ html{scroll-padding-top:150px}
   // квест чтения: главы, «!», прогресс, опыт
   var CH=['about','skills','tools','works','contact'], seen={}, nRead=0;
   var qLabel=document.getElementById('qLabel'), qFill=document.getElementById('qFill'), qXp=document.getElementById('qXp'), quest=document.getElementById('quest'), toast=document.getElementById('toast'), tt;
+
+  // конфети: залп из-под низа по центру, два слоя глубины; k — размер, n — количество, DUR — длительность
+  var cfRaf=0;
+  function confetti(k,n,DUR,power){
+    if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var c=document.getElementById('confetti'), x=c.getContext('2d'), W, H, dpr=Math.min(devicePixelRatio||1,2);
+    function size(){ W=innerWidth; H=innerHeight; c.width=W*dpr; c.height=H*dpr; x.setTransform(dpr,0,0,dpr,0,0); }
+    size();
+    cancelAnimationFrame(cfRaf);
+    var cols=['#ff9142','#ffc27a','#f26a1b','#fff3e6','#ffb347','#ffe2b8'], P=[];
+    function make(layer){
+      var back=layer===0, cnt=Math.round(n*(back?1.2:1));
+      for(var i=0;i<cnt;i++){
+        var ang=-Math.PI/2+(Math.random()-.5)*1.1, sp=(back?9:13)*power*(.75+Math.random()*.5);
+        var q=(back?.6:1.35)*k;
+        P.push({layer:layer,x:W/2+(Math.random()-.5)*40,y:H+8,
+          vx:Math.cos(ang)*sp,vy:Math.sin(ang)*sp,
+          w:(6+Math.random()*5)*q,h:(3+Math.random()*2.5)*q,
+          c:cols[i%cols.length],a:back?.7:1,
+          r:Math.random()*6.28,vr:(Math.random()-.5)*.2,
+          ph:Math.random()*6.28,sw:.03+Math.random()*.03,
+          flip:Math.random()*6.28,vf:.1+Math.random()*.15,fall:0});
+      }
+    }
+    make(0); make(1);
+    var t0=performance.now();
+    function step(p){
+      p.vx*=.965; p.vy*=.965;
+      if(p.vy>-.6){ p.fall=Math.min(p.fall+.012,1.1); }
+      p.ph+=p.sw; p.x+=p.vx+Math.sin(p.ph)*.9; p.y+=p.vy+p.fall; p.r+=p.vr; p.flip+=p.vf;
+    }
+    function draw(p,t){
+      var sy=Math.abs(Math.cos(p.flip)), alpha=p.a*Math.max(0,Math.min(1,(DUR-t)/1500));
+      x.save(); x.translate(p.x,p.y); x.rotate(p.r); x.scale(1,Math.max(.08,sy));
+      x.globalAlpha=alpha; x.fillStyle=p.c; x.fillRect(-p.w/2,-p.h/2,p.w,p.h); x.restore();
+    }
+    (function frame(now){
+      var t=now-t0; x.clearRect(0,0,W,H);
+      P.forEach(function(p){ if(p.layer===0){ step(p); draw(p,t); } });
+      P.forEach(function(p){ if(p.layer===1){ step(p); draw(p,t); } });
+      if(t<DUR) cfRaf=requestAnimationFrame(frame); else x.clearRect(0,0,W,H);
+    })(performance.now());
+  }
+  // редкие «листики-конфети» сверху после полного прочтения: медленно падают
+  var amb=null;
+  function startAmbient(){
+    if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var c=document.getElementById('confetti2'), x=c.getContext('2d'), W, H, dpr=Math.min(devicePixelRatio||1,2);
+    function size(){ W=innerWidth; H=innerHeight; c.width=W*dpr; c.height=H*dpr; x.setTransform(dpr,0,0,dpr,0,0); }
+    size(); addEventListener('resize',size);
+    var cols=['#ff9142','#ffc27a','#f26a1b','#fff3e6','#ffb347','#ffe2b8'], P=[], last=performance.now();
+    function spawn(){
+      if(P.length>10) return;
+      var q=1.5;
+      P.push({x:Math.random()*W,y:-20,vy:.6+Math.random()*.5,
+        w:(6+Math.random()*5)*q*1.35,h:(3+Math.random()*2.5)*q*1.35,
+        c:cols[(Math.random()*cols.length)|0],r:Math.random()*6.28,vr:(Math.random()-.5)*.03,
+        ph:Math.random()*6.28,sw:.01+Math.random()*.012,flip:Math.random()*6.28,vf:.04+Math.random()*.05});
+    }
+    (function frame(now){
+      x.clearRect(0,0,W,H);
+      if(now-last>900){ last=now; if(Math.random()<.6) spawn(); }
+      P=P.filter(function(p){
+        p.ph+=p.sw; p.x+=Math.sin(p.ph)*.8; p.y+=p.vy; p.r+=p.vr; p.flip+=p.vf;
+        if(p.y>H+30) return false;
+        x.save(); x.translate(p.x,p.y); x.rotate(p.r); x.scale(1,Math.max(.08,Math.abs(Math.cos(p.flip))));
+        x.globalAlpha=.95; x.fillStyle=p.c; x.fillRect(-p.w/2,-p.h/2,p.w,p.h); x.restore();
+        return true;
+      });
+      requestAnimationFrame(frame);
+    })(performance.now());
+  }
+  function celebrate(){
+    document.querySelectorAll('.btn.tg').forEach(function(b){
+      b.classList.add('won'); setTimeout(function(){ b.classList.remove('won'); },3000);
+    });
+  }
   function mark(id){
     if(seen[id]) return; seen[id]=1; nRead++;
     var a=document.querySelector('.links a[data-ch="'+id+'"]');
     if(a){ a.classList.add('ok'); a.querySelector('.bang').textContent='\u2713'; }
-    qFill.style.width=(nRead/CH.length*100)+'%';
+    var prev=(nRead-1)/CH.length*100, cur=nRead/CH.length*100;
+    // видимый «кусок» воды добавляется, потом сливается с полоской
+    var chunk=document.createElement('span'); chunk.className='q-chunk';
+    chunk.style.left='calc('+prev+'% - 2px)'; quest.querySelector('.q-bar').appendChild(chunk);
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ chunk.style.width='calc('+(cur-prev)+'% + 2px)'; }); });
+    setTimeout(function(){ qFill.style.width=cur+'%'; chunk.style.opacity='0'; setTimeout(function(){ chunk.remove(); },600); if(all) quest.classList.add('full'); },1150);
     qXp.textContent=(nRead*20)+' XP';
     var all=nRead===CH.length;
     qLabel.textContent=all?'Все главы пройдены':'Прочитано '+nRead+' из '+CH.length;
-    quest.classList.toggle('full',all);
     toast.textContent=all?'+20 XP · Всё прочитано, спасибо!':'+20 XP · Глава '+nRead+' из '+CH.length+' пройдена';
     toast.classList.add('show'); clearTimeout(tt); tt=setTimeout(function(){toast.classList.remove('show')},2600);
+    if(all){
+      document.documentElement.classList.add('done');
+      confetti(1.5,150,7000,1.35); celebrate(); quest.classList.add('win');
+      setTimeout(startAmbient,1200);
+    } else {
+      confetti(.5,55,2600,.8);
+    }
   }
   var eo=new IntersectionObserver(function(es){
     es.forEach(function(e){ if(e.isIntersecting){ mark(e.target.dataset.ch); eo.unobserve(e.target);} });
